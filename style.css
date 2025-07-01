@@ -318,6 +318,13 @@ bleu 5 21 68
     height: 150px;
 }
 
+#background-sign #sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
 #background-sign #error {
     display: flex;
     justify-content: center;
@@ -331,11 +338,12 @@ bleu 5 21 68
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 #background-sign input[type='email'],
-#background-sign input[type='password'] {
+#background-sign input[type='password'],
+#background-sign input[type='text'] {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid rgb(102, 166, 145);
