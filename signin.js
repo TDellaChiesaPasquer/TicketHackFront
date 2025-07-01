@@ -1,15 +1,16 @@
-document.querySelector('#btn-sigin', function (event) {
+document.querySelector('#btn-signin').addEventListener('click', function (event) {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    fetch('http://localhost:3000%/users/signin', {
+    fetch('http://localhost:3000/users/signin', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: {email, password}
+        body: JSON.stringify({email, password})
     })
     .then(response => response.json())
     .then(data => {
         if (!data.result) {
             console.log(data.error);
+            document.querySelector('#error').innerHTML = data.error;
             return;
         }
         addCookie('token', data.token);
@@ -17,6 +18,7 @@ document.querySelector('#btn-sigin', function (event) {
     })
     .catch(error => {
         console.log(error);
+        document.querySelector('#error').innerHTML = data.error;
     })
 })
 

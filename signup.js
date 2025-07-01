@@ -1,4 +1,4 @@
-document.querySelector('#btn-signup', function (event) {
+document.querySelector('#btn-signup').addEventListener('click', function (event) {
     const firstName = document.querySelector('#firstName');
     const lastName = document.querySelector('#lastName');
     const email = document.querySelector('#email').value;
@@ -10,7 +10,7 @@ document.querySelector('#btn-signup', function (event) {
     fetch('http://localhost:3000/users/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: {firstName, lastName, email, password}
+        body: JSON.stringify({firstName, lastName, email, password})
     })
     .then(response => response.json())
     .then(data => {
