@@ -267,16 +267,18 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
 }
 
-#cart-list {
+.trip-list {
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+
 
 .trip-container {
     display: flex;
@@ -285,9 +287,10 @@ button {
     width: 100%;
     background-color: rgb(246, 241, 240);
     height: 60px;
-    padding: 5px;
+    padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .trip-container > button {
@@ -295,7 +298,37 @@ button {
 }
 
 #cart-title {
-    
+    margin: 30px;
+}
+
+#bottom-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#bottom-book hr{
+    width: 20%;
+    border: 1px solid black;
+}
+
+#bottom-book p {
+    color: rgb(102, 166, 145);
+    margin: 20px;
+    font-weight: 500;
+}
+
+#top-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px 30px 30px;
+}
+
+#book-title {
+    margin: 30px;
 }
 
 /* fond 242 242 242
