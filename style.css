@@ -3,8 +3,142 @@
     padding: 0;
 }
 
-body {
+/* Navbar */
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+nav .logo {
+    color: rgb(102, 166, 145);
+}
+
+nav #menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-right: 30px;
+}
+
+/* Partie principale */
+.accueil {
     background: url(./images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-  }
+    height: 100vh;
+}
+
+/* Phrases d'accroche */
+h1,
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 20px;
+}
+
+h1 {
+    padding-top: 65px;
+}
+
+.texte {
+    padding-bottom: 50px;
+}
+
+/* Encadrés recherche + resultat */
+.information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+}
+
+.information .recherche,
+.information .resultat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 15px;
+}
+
+/* Encadré recherche */
+.information .recherche {
+    /* padding: 180px 100px; */
+    /* padding-left: 50px ;
+    padding-right: 40px; */
+    padding: 40px 40px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information .recherche input {
+    background-color: rgb(242, 242, 242);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.information .recherche input[type=text] {
+    /* padding-right: 60px; */
+    padding: 10px 10px 10px 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.information .recherche .btn-texte {
+    margin-bottom: 50px;
+}
+
+.information .recherche #btn-departure {
+    border-bottom: 1px solid gray;
+}
+
+.information .recherche .btn-calendar {
+    width: 100%;
+}
+
+.information .recherche input[type=date] {
+    padding: 10px 10px 10px 5px;
+    color: gray;
+    margin-bottom: 100px;
+}
+
+.information .recherche input[type=button] {
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    background-color: rgb(102, 166, 145);
+    color: white;
+}
+
+/* Encadré résultat */
+.information .resultat {
+    /* padding: 130px 50px; */
+    padding: 40px 60px 35px 60px;
+}
+
+.information .resultat img {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.information .resultat p {
+    margin-top: 35px;
+}
+
+.information .resultat #trait {
+    color: rgb(102, 166, 145);
+}
+
+.information .resultat #phrase {
+    margin-bottom: 40px;
+}
