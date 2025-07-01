@@ -21,7 +21,10 @@ nav .logo {
     padding-left: 20px;
 }
 
-.logo a:link, .logo a:visited, .logo a:hover, .logo a:active {
+.logo a:link,
+.logo a:visited,
+.logo a:hover,
+.logo a:active {
     color: rgb(102, 166, 145);
 }
 
@@ -33,7 +36,7 @@ nav #menu {
     font-weight: 500;
 }
 
-#menu  div {
+#menu div {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -41,16 +44,19 @@ nav #menu {
     padding: 0 20px;
 }
 
-#menu  div:hover {
+#menu div:hover {
     background-color: lightgray;
     cursor: pointer;
 }
 
-#menu > a {
+#menu>a {
     height: 100%;
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link,
+a:visited,
+a:hover,
+a:active {
     display: block;
     text-decoration: none;
     color: black;
@@ -290,14 +296,57 @@ button {
     border-radius: 5px;
 }
 
-.trip-container > button {
+.trip-container>button {
     width: 34px;
-}
-
-#cart-title {
-    
 }
 
 /* fond 242 242 242
 bleu 5 21 68
 246 241 240*/
+
+#background-sign {
+    background-color: white;
+    height: 400px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+#background-sign #sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+#background-sign #error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    margin-bottom: 10px;
+}
+
+#background-sign .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#background-sign input[type='email'],
+#background-sign input[type='password'] {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(102, 166, 145);
+    width: 50%;
+}
+
+#background-sign input[type='button'] {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 40%;
+    background-color: rgb(102, 166, 145);
+    color: white;
+}
