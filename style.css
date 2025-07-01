@@ -36,7 +36,14 @@ nav #menu {
     font-weight: 500;
 }
 
-#menu div {
+#menu > div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkTop {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -44,12 +51,12 @@ nav #menu {
     padding: 0 20px;
 }
 
-#menu div:hover {
+.linkTop:hover {
     background-color: lightgray;
     cursor: pointer;
 }
 
-#menu>a {
+#menu a {
     height: 100%;
 }
 

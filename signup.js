@@ -1,6 +1,6 @@
 document.querySelector('#btn-signup').addEventListener('click', function (event) {
-    const firstName = document.querySelector('#firstName');
-    const lastName = document.querySelector('#lastName');
+    const firstName = document.querySelector('#firstName').value;
+    const lastName = document.querySelector('#lastName').value;
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     const confirmPassword = document.querySelector('#confirmPassword').value;
@@ -8,6 +8,7 @@ document.querySelector('#btn-signup').addEventListener('click', function (event)
         document.querySelector('#error').innerHTML = 'The passwords are not the same.';
         return;
     }
+    console.log(firstName, lastName)
     fetch('http://localhost:3000/users/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
