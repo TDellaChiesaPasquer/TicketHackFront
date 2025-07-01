@@ -16,6 +16,7 @@ document.querySelector('#btn-signup').addEventListener('click', function (event)
     .then(response => response.json())
     .then(data => {
         if (!data.result) {
+            console.log(data.error)
             document.querySelector('#error').innerHTML = data.error;
             return;
         }
