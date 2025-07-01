@@ -192,3 +192,99 @@ h1 {
     margin-left: 10px;
     border-radius: 5px;
 }
+
+body {
+    background-color: rgb(242, 242, 242);
+}
+
+#container {
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#empty {
+    background-color: white;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#empty p {
+    padding: 0;
+    margin: 15px;
+    font-weight: 500;
+}
+
+#not-empty {
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+}
+
+#bottom-cart {
+    background-color: rgb(5, 21, 68);
+    height: 80px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    color: white;
+}
+
+button {
+    background-color: rgb(102, 166, 145);
+    border: 0;
+    height: 34px;
+    width: 100px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+#cart-list {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.trip-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(246, 241, 240);
+    height: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.trip-container > button {
+    width: 34px;
+}
+
+#cart-title {
+    
+}
+
+/* fond 242 242 242
+bleu 5 21 68
+246 241 240*/
