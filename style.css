@@ -104,7 +104,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: white;
     border-radius: 10px;
     padding: 40px 40px 30px 30px;
@@ -160,7 +160,6 @@ h1 {
 /* Encadré résultat, sans recherche*/
 .information .resultat img {
     width: 50%;
-    margin-top: 20px;
 }
 
 .information .resultat p {
@@ -184,13 +183,27 @@ h1 {
 .information .resultat .voyage {
     background-color: rgb(246, 241, 240);
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 10px;
-    padding-right: 20px;
+    margin-bottom: 14px;
     width: 100%;
     margin-left: 10px;
     border-radius: 5px;
+    height: 60px;
+}
+
+.information .resultat .voyage input[type='button'] {
+    background-color: rgb(102, 166, 145);
+    color: white;
+    border: none;
+    height: 35px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.information .resultat .voyage .euro {
+    font-weight: bold;
 }
 
 body {

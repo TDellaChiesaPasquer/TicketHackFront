@@ -14,10 +14,38 @@ document.querySelector('#search-info').addEventListener('click', () => {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' }
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.result === true && data.trips.length > 0) {
+        document.querySelector('.resultat').innerHTML = ''
+        for (let i = 0; i < data.trips.length; i++) {
+          const dateDepart = new Date(data.trips[i].date);
+          const heures = dateDepart.getHours()
+          let minutes = dateDepart.getMinutes()
+
+          if (minutes < 10) {
+            minutes = "0" + minutes
+          } else {
+            minutes
+          }
+
+          document.querySelector('.resultat').innerHTML += `
+            <div class="voyage">
+              <div>${cityDeparture} > ${cityArrival} </div>
+              <div>${heures}h${minutes}</div>
+              <div class="euro">${data.trips[i].price}€</div>
+              <input type="button" value="Book">
+            </div>
+					`;
+        }
+      } else if (data.result === true && data.trips.length == 0) {
+        document.querySelector('.resultat').innerHTML = `
+        <img src="./images/notfound.png" alt="Logo not found">
+                <p id="trait">_____________________</p>
+                <p id="phrase">No trip found.</p>
+        `
+      }
+    })
 })
 
 
