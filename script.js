@@ -17,7 +17,7 @@ document.querySelector('#search-info').addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
       if (data.result === true && data.trips.length > 0) {
-        document.querySelector('.resultat').innerHTML = ''
+        document.querySelector('.resultat').innerHTML = '<div id="search-result"></div>'
         for (let i = 0; i < data.trips.length; i++) {
           const dateDepart = new Date(data.trips[i].date);
           const heures = dateDepart.getHours()
@@ -29,7 +29,7 @@ document.querySelector('#search-info').addEventListener('click', () => {
             minutes
           }
 
-          document.querySelector('.resultat').innerHTML += `
+          document.querySelector('#search-result').innerHTML += `
             <div class="voyage">
               <div>${cityDeparture} > ${cityArrival} </div>
               <div>${heures}h${minutes}</div>
@@ -40,9 +40,10 @@ document.querySelector('#search-info').addEventListener('click', () => {
         }
       } else if (data.result === true && data.trips.length == 0) {
         document.querySelector('.resultat').innerHTML = `
+        <div id='no-result'>
         <img src="./images/notfound.png" alt="Logo not found">
-                <p id="trait">_____________________</p>
-                <p id="phrase">No trip found.</p>
+                <hr>
+                <p id="phrase">No trip found.</p> </div>
         `
       }
     })

@@ -58,20 +58,27 @@
 
         <section class="information">
             <div class="recherche">
-                <div class="btn-texte">
-                    <input type="text" name="btn-departure" id="btn-departure" placeholder="Departure">
-                    <input type="text" name="btn-arrival" id="btn-arrival" placeholder="Arrival">
+                <div id="inputs-search">
+                    <div class="btn-texte">
+                        <input type="text" name="btn-departure" id="btn-departure" placeholder="Departure">
+                        <hr>
+                        <input type="text" name="btn-arrival" id="btn-arrival" placeholder="Arrival">
+                    </div>
+                    <div class="btn-calendar">
+                        <input type="date" name="btn-date" id="btn-date">
+                    </div>
                 </div>
-                <div class="btn-calendar">
-                    <input type="date" name="btn-date" id="btn-date">
+                <div class="btn-search">
                     <input type="button" value="Search" id="search-info">
                 </div>
             </div>
 
             <div class="resultat">
-                <img src="./images/train.png" alt="Logo train">
-                <p id="trait">_____________________</p>
-                <p id="phrase">It's time to book your future trip.</p>
+                <div id="no-search">
+                    <img src="./images/train.png" alt="Logo train">
+                    <hr>
+                    <p id="phrase">It's time to book your future trip.</p>
+                </div>
             </div>
     </div>
     </section>
