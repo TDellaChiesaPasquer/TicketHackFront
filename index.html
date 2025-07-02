@@ -21,26 +21,33 @@
             </a>
         </div>
         <div id="menu">
-            <a href="./signin.html">
-                <div>
-                    Sign in
+            <div id="not-connected">
+                <a href="./signin.html">
+                    <div class="linkTop">
+                        Sign in
+                    </div>
+                </a>
+                <a href="./signup.html">
+                    <div class="linkTop">
+                        Sign up
+                    </div>
+                </a>
+            </div>
+            <div id="connected" style="display:none">
+                <div class="linkTop" id="disconnect-btn">
+                    Disconnect
                 </div>
-            </a>
-             <a href="./signup.html">
-                <div>
-                    Sign up
-                </div>
-            </a>
-            <a href="./cart.html">
-                <div>
-                    Cart
-                </div>
-            </a>
-            <a href="./book.html">
-                <div>
-                    Bookings
-                </div>
-            </a>
+                <a href="./cart.html">
+                    <div class="linkTop">
+                        Cart
+                    </div>
+                </a>
+                <a href="./book.html">
+                    <div class="linkTop">
+                        Bookings
+                    </div>
+                </a>
+            </div>
         </div>
     </nav>
     <div class="accueil">
@@ -51,28 +58,34 @@
 
         <section class="information">
             <div class="recherche">
-                <div class="btn-texte">
-                    <input type="text" name="btn-departure" id="btn-departure" placeholder="Departure">
-                    <input type="text" name="btn-arrival" id="btn-arrival" placeholder="Arrival">
+                <div id="inputs-search">
+                    <div class="btn-texte">
+                        <input type="text" name="btn-departure" id="btn-departure" placeholder="Departure">
+                        <hr>
+                        <input type="text" name="btn-arrival" id="btn-arrival" placeholder="Arrival">
+                    </div>
+                    <div class="btn-calendar">
+                        <input type="date" name="btn-date" id="btn-date">
+                    </div>
                 </div>
-                <div class="btn-calendar">
-                    <input type="date" name="btn-date" id="btn-date">
+                <div class="btn-search">
                     <input type="button" value="Search" id="search-info">
                 </div>
             </div>
 
             <div class="resultat">
-                <img src="./images/train.png" alt="Logo train">
-                <p id="trait">_____________________</p>
-                <p id="phrase">It's time to book your future trip.</p>
+                <div id="no-search">
+                    <img src="./images/train.png" alt="Logo train">
+                    <hr>
+                    <p id="phrase">It's time to book your future trip.</p>
+                </div>
             </div>
     </div>
     </section>
 
     </div>
-
+    <script src="header.js"></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>
