@@ -25,7 +25,7 @@ document.querySelector('#disconnect-btn').addEventListener('click', function (ev
     console.log('test')
     removeCookie('token');
     window.connected = false;
-    window.location.reload();
+    window.location.href = './index.html';
 })
 
 function getCookie(cname) { //Fonction pour récuperer la valeur d'un cookie, faire getCookie('token')

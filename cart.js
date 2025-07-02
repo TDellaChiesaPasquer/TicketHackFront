@@ -132,9 +132,11 @@ function updateDeleteTravelEventListener() {
                             <p>Why not plan a trip?</p>
                         </div>
                         `
+                        document.querySelector('#cart-count').removeAttribute('notEmpty');
                     } else {
                         const price = updatePrice()
                         document.querySelector('#total').innerHTML = price
+                        document.querySelector('#cart-count').innerHTML = listPanier.length;
                     }
                 });
         });
