@@ -475,3 +475,18 @@ bleu 5 21 68
     display: inline;
     color : rgb(102, 166, 145);
 }
+
+#cart-count[notEmpty="true"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: rgb(102, 166, 145);
+    position: absolute;
+    top: 30px;
+    right: 135px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    color: white;
+    pointer-events: none;
+}

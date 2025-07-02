@@ -10,6 +10,10 @@ if (getCookie('token')) {
             window.connected = true;
             document.querySelector('#not-connected').style.display = 'none';
             document.querySelector('#connected').style.display = 'flex';
+            if (data.user.panierList.length > 0) {
+                document.querySelector('#cart-count').setAttribute('notEmpty', 'true'); 
+                document.querySelector('#cart-count').innerHTML = data.user.panierList.length;
+            }
             return;
         }
     })
