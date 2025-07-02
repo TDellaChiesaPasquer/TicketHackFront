@@ -1,7 +1,7 @@
 window.connected = false;
 
 if (getCookie('token')) {
-    fetch('http://localhost:3000/users/info', {
+    fetch('https://ticket-hack-back.vercel.app/users/info', {
         headers: {authorization: getCookie('token')}
     })
     .then(response => response.json())
@@ -10,6 +10,12 @@ if (getCookie('token')) {
             window.connected = true;
             document.querySelector('#not-connected').style.display = 'none';
             document.querySelector('#connected').style.display = 'flex';
+            if (data.user.panierList.length > 0) {
+                document.querySelector('#cart-count').setAttribute('notEmpty', 'true'); 
+                document.querySelector('#cart-count').innerHTML = data.user.panierList.length;
+            }
+            window.cartList = data.user.panierList;
+            window.bookList = data.user.bookingList;
             return;
         }
     })
@@ -19,7 +25,7 @@ document.querySelector('#disconnect-btn').addEventListener('click', function (ev
     console.log('test')
     removeCookie('token');
     window.connected = false;
-    window.localStorage.reload();
+    window.location.reload();
 })
 
 function getCookie(cname) { //Fonction pour récuperer la valeur d'un cookie, faire getCookie('token')

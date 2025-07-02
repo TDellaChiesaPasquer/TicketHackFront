@@ -1,7 +1,7 @@
 document.querySelector('#btn-signin').addEventListener('click', function (event) {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    fetch('http://localhost:3000/users/signin', {
+    fetch('https://ticket-hack-back.vercel.app/users/signin', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email, password})

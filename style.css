@@ -226,6 +226,7 @@ h1 {
     background-color: rgb(102, 166, 145);
     color: white;
     font-size: 18px;
+    cursor: pointer;
 }
 
 /* Encadré résultat, sans recherche*/
@@ -255,6 +256,7 @@ h1 {
     height: 35px;
     width: 50px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .information .resultat .voyage .euro {
@@ -411,12 +413,14 @@ bleu 5 21 68
     height: 80px;
 }
 
-#background-sign #error {
+#error {
     display: flex;
     justify-content: center;
     align-items: center;
     color: red;
     margin-bottom: 10px;
+    width: 300px;
+    text-align: center;
 }
 
 #background-sign .btn {
@@ -443,4 +447,59 @@ bleu 5 21 68
     width: 40%;
     background-color: rgb(102, 166, 145);
     color: white;
+    cursor: pointer;
+}
+
+#bottom-signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#bottom-signin hr {
+    width: 300px;
+    border: 1px solid rgb(102, 166, 145);
+}
+
+#signin-link {
+    width: 300px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+#signin-link a {
+    display: inline;
+    color : rgb(102, 166, 145);
+}
+
+#cart-count[notEmpty="true"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: rgb(102, 166, 145);
+    position: absolute;
+    top: 30px;
+    right: 135px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    color: white;
+    pointer-events: none;
+}
+
+.btn-book-block {
+    background-color: rgb(128, 157, 147);
+    cursor: not-allowed;
+    color: white;
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
