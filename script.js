@@ -98,4 +98,3 @@ function addCookie(cname, value, time = 60 * 60 * 24 * 1000) { //Ajoute un cooki
 
 // Lors du login, tu récupères un token dans data.token, tu le sauvegarde en faisant 
 // addCookie('token', data.token)
-
