@@ -1,9 +1,3 @@
-// fetch('http://localhost:3000/trips')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data)
-//   });
-
 document.querySelector('#search-info').addEventListener('click', () => {
   const cityDeparture = document.querySelector('#btn-departure').value
   const cityArrival = document.querySelector('#btn-arrival').value
@@ -16,6 +10,7 @@ document.querySelector('#search-info').addEventListener('click', () => {
   })
     .then(response => response.json())
     .then(data => {
+      console.log(data)
       if (data.result === true && data.trips.length > 0) {
         document.querySelector('.resultat').innerHTML = ''
         for (let i = 0; i < data.trips.length; i++) {
@@ -31,13 +26,14 @@ document.querySelector('#search-info').addEventListener('click', () => {
 
           document.querySelector('.resultat').innerHTML += `
             <div class="voyage">
-              <div>${cityDeparture} > ${cityArrival} </div>
+              <div>${data.trips[i].departure} > ${data.trips[i].arrival} </div>
               <div>${heures}h${minutes}</div>
               <div class="euro">${data.trips[i].price}€</div>
-              <input type="button" value="Book">
+              <input type="button" value="Book" class="btn-book" id="${data.trips[i]._id}">
             </div>
 					`;
         }
+        updateBookEventListener();
       } else if (data.result === true && data.trips.length == 0) {
         document.querySelector('.resultat').innerHTML = `
         <img src="./images/notfound.png" alt="Logo not found">
@@ -48,6 +44,24 @@ document.querySelector('#search-info').addEventListener('click', () => {
     })
 })
 
+function updateBookEventListener() {
+  for (let i = 0; i < document.querySelectorAll('.btn-book').length; i++) {
+    document.querySelectorAll('.btn-book')[i].addEventListener('click', function () {
+      try {
+        fetch('http://localhost:3000/trips/cart', {
+          method: 'PUT',
+          headers: {
+            authorization: getCookie('token'),
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ tripId: this.getAttribute('id') })
+        })
+      } catch (error) {
+        console.error("Erreur :", erreur)
+      }
+    })
+  }
+}
 
 
 function getCookie(cname) { //Fonction pour récuperer la valeur d'un cookie, faire getCookie('token')
@@ -83,3 +97,4 @@ function addCookie(cname, value, time = 60 * 60 * 24 * 1000) { //Ajoute un cooki
 
 // Lors du login, tu récupères un token dans data.token, tu le sauvegarde en faisant 
 // addCookie('token', data.token)
+
