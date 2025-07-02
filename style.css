@@ -508,3 +508,45 @@ bleu 5 21 68
     justify-content: center;
     align-items: center;
 }
+
+#profil-card {
+    background-color: white;
+    height: 400px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+#top-profil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#top-profil hr {
+    width: 300px;
+    border: 1px solid rgb(128, 157, 147);
+    margin-top: 30px;
+}
+
+#past-trips {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#past-trips .trip-container {
+    width: 300px;
+}
+
+#past-trips-list {
+    overflow: auto;
+    height: 200px;
+}
+
+#list-top {
+    margin-bottom: 30px;
+}

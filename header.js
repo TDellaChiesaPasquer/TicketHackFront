@@ -6,6 +6,7 @@ if (getCookie('token')) {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         if (data.result) {
             window.connected = true;
             document.querySelector('#not-connected').style.display = 'none';
@@ -16,6 +17,9 @@ if (getCookie('token')) {
             }
             window.cartList = data.user.panierList;
             window.bookList = data.user.bookingList;
+            window.firstName = data.user.firstName;
+            window.lastName = data.user.lastName;
+            window.email = data.user.email;
             return;
         }
     })
