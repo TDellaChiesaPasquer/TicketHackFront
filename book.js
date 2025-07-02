@@ -52,12 +52,26 @@ fetch(url, {
 
                 const dateNow = new Date();
                 let delay = dateDepart - dateNow
+                let minuteDelay = new Date(delay).getMinutes()
                 let heureDelay = new Date(delay).getHours()
-                let jourDelay = new Date(delay).getDay()
-                console.log('jour', jourDelay)
+                let jourDelay = Math.floor(delay/(1000*60*60*24)) // millisecondes * secondes * heures * jour
+                console.log('jour', jourDelay, 'heures', heureDelay, 'minutes', minuteDelay)
 
                 if (minutes < 10) {
                     minutes = "0" + minutes
+                }
+
+                let temps;
+                if (jourDelay < 0) {
+                    continue;
+                } else if (jourDelay > 0) {
+                    temps = `Departure in ${jourDelay} days`
+                } else if (jourDelay === 0 && heureDelay > 0) {
+                    temps = `Departure in ${heureDelay}`
+                } else if (jourDelay === 0 && heureDelay === 0 && minuteDelay > 0) {
+                    temps = `Departure in ${minuteDelay}`
+                } else {
+                    temps = `Departure now!`
                 }
 
                 document.querySelector('#book-list').innerHTML += `
@@ -65,7 +79,7 @@ fetch(url, {
                         <div> ${listBooking[i].departure} > ${listBooking[i].arrival} </div>
                         <div> ${heures}:${minutes} </div>
                         <div> ${listBooking[i].price}€ </div>
-                        <div> Departure in ${heureDelay} hours </div>
+                        <div id="temps"> ${temps} </div>
                     </div>
                 `
             }
