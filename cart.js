@@ -64,18 +64,37 @@ fetch(url, {
         </div>
         </div>
         `
-            for (let i = 0; i < listPanier.length; i++) {
-                const dateDepart = new Date(listPanier[i].date);
-                const heures = dateDepart.getHours()
-                let minutes = dateDepart.getMinutes()
 
-                if (minutes < 10) {
-                    minutes = "0" + minutes
-                } else {
-                    minutes
+            document.querySelector('#purchase').addEventListener('click', async function (event) {
+                try {
+                    const reponse = await fetch("https://ticket-hack-back.vercel.app/trips/book", {
+                        method: "PUT", 
+                        headers: {
+                            authorization: getCookie('token'),
+                            "Content-Type": "application/json"
+                        }
+                    });
+                    const resultat = await reponse.json();
+                    console.log("Réussite :", resultat);
+                    window.location.href = './book.html'
+                } catch (erreur) {
+                    console.error("Erreur :", erreur);
                 }
+            })
+        }
 
-                document.querySelector('#cart-list').innerHTML += `
+        for (let i = 0; i < listPanier.length; i++) {
+            const dateDepart = new Date(listPanier[i].date);
+            const heures = dateDepart.getHours()
+            let minutes = dateDepart.getMinutes()
+
+            if (minutes < 10) {
+                minutes = "0" + minutes
+            } else {
+                minutes
+            }
+
+            document.querySelector('#cart-list').innerHTML += `
                     <div class="trip-container">
                         <div> ${listPanier[i].departure} > ${listPanier[i].arrival} </div>
                         <div> ${heures}:${minutes} </div>
@@ -83,8 +102,7 @@ fetch(url, {
                         <button class="delete" id="${listPanier[i]._id}">X</button>
                     </div>
 					`;
-                updateDeleteTravelEventListener()
-            }
+            updateDeleteTravelEventListener()
         }
     })
 
