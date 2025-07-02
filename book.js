@@ -50,10 +50,11 @@ fetch(url, {
                 const heures = dateDepart.getHours()
                 let minutes = dateDepart.getMinutes()
 
-                // const dateNow = new Date();
-                // let delay = dateDepart - dateNow
-                // let heureDelay = new Date(delay).getHours()
-                // let jourDelay = new Date(delay).getDay()
+                const dateNow = new Date();
+                let delay = dateDepart - dateNow
+                let heureDelay = new Date(delay).getHours()
+                let jourDelay = new Date(delay).getDay()
+                console.log('jour', jourDelay)
 
                 if (minutes < 10) {
                     minutes = "0" + minutes
@@ -67,8 +68,6 @@ fetch(url, {
                         <div> Departure in ${heureDelay} hours </div>
                     </div>
                 `
-
-
             }
         }
     })
