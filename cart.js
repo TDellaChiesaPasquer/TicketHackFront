@@ -26,7 +26,7 @@ function updatePrice() {
 }
 
 
-url = "http://localhost:3000/trips/cart"
+url = "https://ticket-hack-back.vercel.app/trips/cart"
 fetch(url, {
     method: 'GET',
     headers: {
@@ -91,7 +91,7 @@ fetch(url, {
 function updateDeleteTravelEventListener() {
     for (let i = 0; i < document.querySelectorAll('.delete').length; i++) {
         document.querySelectorAll('.delete')[i].addEventListener('click', function () {
-            url = 'http://localhost:3000/trips/cart'
+            url = 'https://ticket-hack-back.vercel.app/trips/cart'
             fetch(url, {
                 method: 'DELETE',
                 headers: {
