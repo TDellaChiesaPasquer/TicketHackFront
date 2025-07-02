@@ -19,7 +19,7 @@ document.querySelector('#disconnect-btn').addEventListener('click', function (ev
     console.log('test')
     removeCookie('token');
     window.connected = false;
-    window.localStorage.reload();
+    window.location.reload();
 })
 
 function getCookie(cname) { //Fonction pour récuperer la valeur d'un cookie, faire getCookie('token')

@@ -2,7 +2,10 @@ document.querySelector('#search-info').addEventListener('click', () => {
   const cityDeparture = document.querySelector('#btn-departure').value
   const cityArrival = document.querySelector('#btn-arrival').value
   const SearchDate = document.querySelector('#btn-date').value
-
+  if (!cityArrival || !cityDeparture || !SearchDate) {
+    document.querySelector('#error').innerHTML = 'Please select a date, a departure and an arrival.';
+    return;
+  }
   const url = `http://localhost:3000/trips/${cityDeparture}/${cityArrival}/${SearchDate}`
   fetch(url, {
     method: 'GET',
@@ -46,22 +49,34 @@ document.querySelector('#search-info').addEventListener('click', () => {
 })
 
 function updateBookEventListener() {
-  for (let i = 0; i < document.querySelectorAll('.btn-book').length; i++) {
-    document.querySelectorAll('.btn-book')[i].addEventListener('click', function () {
-      try {
-        fetch('http://localhost:3000/trips/cart', {
-          method: 'PUT',
-          headers: {
-            authorization: getCookie('token'),
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ tripId: this.getAttribute('id') })
+    for (let i = 0; i < document.querySelectorAll('.btn-book').length; i++) {
+        document.querySelectorAll('.btn-book')[i].addEventListener('click', async function (event) {
+            try {
+                if (window.connected) {
+                    const response = await fetch('http://localhost:3000/trips/cart', {
+                        method: 'PUT',
+                        headers: {
+                            authorization: getCookie('token'),
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ tripId: this.getAttribute('id') })
+                    })
+                    const data = await response.json();
+                    if (!data.result) {
+                        console.log(data.error);
+                        document.querySelector('#error').innerHTML = data.error;
+                        return;
+                    }
+                    window.location.href = './cart.html';
+                    return;
+                }
+                window.location.href = './signin.html';
+            } catch (error) {
+                console.error("Erreur :", error)
+                document.querySelector('#error').innerHTML = error;
+            }
         })
-      } catch (error) {
-        console.error("Erreur :", erreur)
-      }
-    })
-  }
+    }
 }
 
 
