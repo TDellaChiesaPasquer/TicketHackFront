@@ -33,10 +33,10 @@ fetch('https://ticket-hack-back.vercel.app/trips/book', {
         let day = elementDate.getDate();
         let month = elementDate.getMonth() + 1;
         const year = elementDate.getFullYear();
-        if (day.length === 1) {
+        if (day < 10) {
             day = '0' + day;
         }
-        if (month.length === 1) {
+        if (month < 10) {
             month = '0' + month;
         }
         document.querySelector('#past-trips-list').innerHTML += `
