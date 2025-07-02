@@ -9,7 +9,7 @@ document.querySelector('#btn-signup').addEventListener('click', function (event)
         return;
     }
     console.log(firstName, lastName)
-    fetch('http://localhost:3000/users/signup', {
+    fetch('https://ticket-hack-back.vercel.app/users/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({firstName, lastName, email, password})

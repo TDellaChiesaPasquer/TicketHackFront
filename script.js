@@ -6,7 +6,7 @@ document.querySelector('#search-info').addEventListener('click', () => {
     document.querySelector('#error').innerHTML = 'Please select a date, a departure and an arrival.';
     return;
   }
-  const url = `http://localhost:3000/trips/${cityDeparture}/${cityArrival}/${SearchDate}`
+  const url = `https://ticket-hack-back.vercel.app/trips/${cityDeparture}/${cityArrival}/${SearchDate}`
   fetch(url, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' }
@@ -60,7 +60,7 @@ function updateBookEventListener() {
         document.querySelectorAll('.btn-book')[i].addEventListener('click', async function (event) {
             try {
                 if (window.connected) {
-                    const response = await fetch('http://localhost:3000/trips/cart', {
+                    const response = await fetch('https://ticket-hack-back.vercel.app/trips/cart', {
                         method: 'PUT',
                         headers: {
                             authorization: getCookie('token'),

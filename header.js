@@ -1,7 +1,7 @@
 window.connected = false;
 
 if (getCookie('token')) {
-    fetch('http://localhost:3000/users/info', {
+    fetch('https://ticket-hack-back.vercel.app/users/info', {
         headers: {authorization: getCookie('token')}
     })
     .then(response => response.json())
