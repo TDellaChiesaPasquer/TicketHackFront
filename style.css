@@ -489,6 +489,11 @@ bleu 5 21 68
     line-height: 18px;
     color: white;
     pointer-events: none;
+    display: block;
+}
+
+#cart-count {
+    display: none;
 }
 
 .btn-book-block {
