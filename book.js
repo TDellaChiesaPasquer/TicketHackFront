@@ -67,9 +67,9 @@ fetch(url, {
                 } else if (jourDelay > 0) {
                     temps = `Departure in ${jourDelay} days`
                 } else if (jourDelay === 0 && heureDelay > 0) {
-                    temps = `Departure in ${heureDelay}`
+                    temps = `Departure in ${heureDelay} hours`
                 } else if (jourDelay === 0 && heureDelay === 0 && minuteDelay > 0) {
-                    temps = `Departure in ${minuteDelay}`
+                    temps = `Departure in ${minuteDelay} minutes`
                 } else {
                     temps = `Departure now!`
                 }
