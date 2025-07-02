@@ -14,6 +14,8 @@ if (getCookie('token')) {
                 document.querySelector('#cart-count').setAttribute('notEmpty', 'true'); 
                 document.querySelector('#cart-count').innerHTML = data.user.panierList.length;
             }
+            window.cartList = data.user.panierList;
+            window.bookList = data.user.bookingList;
             return;
         }
     })

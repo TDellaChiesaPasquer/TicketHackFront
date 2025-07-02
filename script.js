@@ -26,13 +26,20 @@ document.querySelector('#search-info').addEventListener('click', () => {
           } else {
             minutes
           }
+          let button;
+          if (!window.connected || (!window.cartList.some(e => e === data.trips[i]._id) && !window.bookList.some(e => e === data.trips[i]._id))) {
+            button = `<input type="button" value="Book" class="btn-book" id="${data.trips[i]._id}"></input>`;
+          } else {
+            button = `<div  class="btn-book-block" id="${data.trips[i]._id}"><i class="fa-solid fa-check"></i></div>`;
+          }
+          console.log(window.cartList);
 
           document.querySelector('#search-result').innerHTML += `
             <div class="voyage">
               <div>${data.trips[i].departure} > ${data.trips[i].arrival} </div>
               <div>${heures}h${minutes}</div>
               <div class="euro">${data.trips[i].price}€</div>
-              <input type="button" value="Book" class="btn-book" id="${data.trips[i]._id}">
+              ${button}
             </div>
 					`;
         }

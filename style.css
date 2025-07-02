@@ -490,3 +490,16 @@ bleu 5 21 68
     color: white;
     pointer-events: none;
 }
+
+.btn-book-block {
+    background-color: rgb(128, 157, 147);
+    cursor: not-allowed;
+    color: white;
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
