@@ -18,6 +18,10 @@ document.querySelector('#search-info').addEventListener('click', () => {
         document.querySelector('.resultat').innerHTML = '<div id="search-result"></div>'
         for (let i = 0; i < data.trips.length; i++) {
           const dateDepart = new Date(data.trips[i].date);
+          console.log(data.trips[i].date)
+          if (dateDepart <= date) {
+            continue;
+          }
           const heures = dateDepart.getHours()
           let minutes = dateDepart.getMinutes()
 
@@ -86,6 +90,18 @@ function updateBookEventListener() {
     }
 }
 
+const date = new Date();
+
+let month = date.getMonth() + 1;
+let day = date.getDate();
+const year = date.getFullYear();
+if(month < 10)
+    month = '0' + month.toString();
+if(day < 10)
+    day = '0' + day.toString();
+
+const dateInput = year + '-' + month + '-' + day;
+document.querySelector('#btn-date').setAttribute('min', dateInput);
 
 function getCookie(cname) { //Fonction pour récuperer la valeur d'un cookie, faire getCookie('token')
   let name = cname + "=";
